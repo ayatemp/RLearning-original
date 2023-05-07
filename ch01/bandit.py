@@ -3,9 +3,11 @@ import matplotlib.pyplot as plt
 
 
 class Bandit:
+    # 自分をインスタ化したものに範囲の変数を追加しておく
     def __init__(self, arms=10):
         self.rates = np.random.rand(arms)
 
+    # play関数に入れられたarmの番号の腕を引く．つまり何番目のガチャを引くのかを選べる
     def play(self, arm):
         rate = self.rates[arm]
         if rate > np.random.rand():
