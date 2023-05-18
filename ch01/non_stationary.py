@@ -10,6 +10,8 @@ class NonStatBandit:
 
     def play(self, arm):
         rate = self.rates[arm]
+        # ノイズの仕方を工夫した方がいいかもしれない
+        # 例えばノイズがとてつもなく大きかったらどうなるのかを確かめた方がいい
         self.rates += 0.1 * np.random.randn(self.arms)  # Add noise
         if rate > np.random.rand():
             return 1
