@@ -45,7 +45,7 @@ class QLearningAgent:
             qs = self.qnet(state)
             return qs.data.argmax()
     
-    def update(self,state,action,reward,next_state,done):
+    def update(self,state,action,reward,next_state,done): #Q学習の更新式に従ってネットワークを更新
         if done:
             next_q = np.zeros(1)
         else:
